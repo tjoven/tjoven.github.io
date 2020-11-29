@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gridea</title>
+<link rel="shortcut icon" href="https://tjoven.github.io/favicon.ico?v=1606667167961">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://tjoven.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Gridea - Atom Feed" href="https://tjoven.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="温故而知新" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tjoven.github.io">
+  <img class="avatar" src="https://tjoven.github.io/images/avatar.png?v=1606667167961" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://tjoven.github.io/post/git-chang-yong-ming-ling/">
+        <h2 class="post-title">Git常用命令</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-11-29
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        <h1 id="本地操作">本地操作</h1>
+<h3 id="git-add-添加文件">Git add .                                添加文件</h3>
+<h3 id="git-commit-m-commit文件">Git commit -m “”             commit文件</h3>
+<h3 id="git-reset-hard-head-版本回退">Git reset --hard HEAD^      版本回退</h3>
+<h3 id="git-reset-hard-hash-回退到某个版本">git reset --hard hash            回退到某个版本</h3>
+<h3 id="git-log-版本历史">git log                                  版本历史</h3>
+<h3 id="git-reflog-commit记录">git reflog                              commit记录</h3>
+<h3 id="git-reset-head-file-从暂存区撤回">git reset HEAD file             从暂存区撤回</h3>
+<h3 id="git-checkout-file-放弃工作区的修改">git checkout -- file              放弃工作区的修改</h3>
+<h3 id="小节">小节</h3>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。</p>
+<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。</p>
+<p>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
+<h1 id="远程仓库">远程仓库</h1>
+<h3 id="创建ssh-kye-ssh-keygen-t-rsa-c-youremailexamplecom">创建SSH Kye ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</h3>
+<h3 id="git-remote-add-origin-gitserver-namepathrepo-namegit-关联远程仓库">git remote add origin git@server-name:path/repo-name.git   关联远程仓库</h3>
+<h3 id="git-remote-远程仓库信息">git remote              远程仓库信息</h3>
+<h3 id="git-push-origin-master-push远程仓库">git push origin master                                   push远程仓库</h3>
+<h3 id="git-pull-origin-master-更新分支">git pull  origin master                       更新分支</h3>
+<h3 id="git-pull-origin-master-rebase-更新分支没有分叉">git pull origin master   --rebase         更新分支，没有分叉</h3>
+<h3 id="git-clone-克隆仓库">git clone                                                  克隆仓库</h3>
+<h1 id="分支管理">分支管理</h1>
+<h3 id="git-checkout-b-dev-创建并切换分支">git checkout -b dev            创建并切换分支</h3>
+<h3 id="git-checkout-b-feature-origindev-创建远程dev的本地分支并切换">git checkout -b feature origin/dev    创建远程dev的本地分支，并切换</h3>
+<h3 id="git-checkout-dev-切换分支">git checkout dev               切换分支</h3>
+<h3 id="git-branch-dev-创建分支">git branch dev             创建分支</h3>
+<h3 id="git-branch-d-dev-删除分支">git branch -d dev          删除分支</h3>
+<h3 id="git-branch-d-dev-强制删除分支">git branch -D dev          强制删除分支</h3>
+<h3 id="git-merge-dev-dev合并到当前分支">git merge dev           dev合并到当前分支</h3>
+<h3 id="git-stash-commit之前的提交缓存起来保证工作区干净">git stash                 commit之前的提交缓存起来，保证工作区干净</h3>
+<h3 id="git-stash-list-缓存列表">git stash list            缓存列表</h3>
+<h3 id="git-stash-apply-stash0-取出缓存但不从列表删除">git stash apply stash@{0}     取出缓存，但不从列表删除</h3>
+<h3 id="git-stash-pop-stash0-取出缓存同时从列表删除">git stash pop stash@{0}      取出缓存，同时从列表删除</h3>
+<h3 id="git-cherry-pick-hash-复制一个commit到当前分支">git cherry-pick hash   复制一个commit到当前分支</h3>
+<p>#标签管理</p>
+<h3 id="git-tag-tag-当前分支最近一次提交之后-打标签">git tag  TAG    当前分支，最近一次提交之后 打标签</h3>
+<h3 id="git-tag-标签列表">git tag          标签列表</h3>
+<h3 id="git-tag-tag-has-每个commit之后-打标签">git tag TAG has  每个commit之后 打标签</h3>
+<h3 id="git-show-tagname-查看标签信息">git show <tagName>  查看标签信息</h3>
+<h3 id="git-push-origin-tagname-推送标签到远程">git push origin <tagName>  推送标签到远程</h3>
+<h4 id="git手册"><a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf">Git手册</a></h4>
+
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://tjoven.github.io/post/effective-java-da-gang/">
+        <h2 class="post-title">Effective Java 大纲</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2020-11-29
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+      </div>
+      
+      <div class="post-abstract">
+        
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://tjoven.github.io/post/hello-gridea/">
+        <h2 class="post-title">Hello Gridea</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2018-12-12
+        </span>
+        <span>
+          2 min read
+        </span>
+        
+          <a href="https://tjoven.github.io/tag/AQVZdu7c0/" class="post-tag">
+            # Gridea
+          </a>
+        
+      </div>
+      
+        <a href="https://tjoven.github.io/post/hello-gridea/" class="post-feature-image" style="background-image: url('https://tjoven.github.io/post-images/hello-gridea.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+
+      </div>
+    </article>
+  
+</div>
+
+    
+        <div class="pagination-container">
+  
+  
+</div>
+
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://tjoven.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

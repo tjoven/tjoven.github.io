@@ -1,0 +1,265 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Git常用命令 | Gridea</title>
+<link rel="shortcut icon" href="https://tjoven.github.io/favicon.ico?v=1606667167961">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://tjoven.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Git常用命令 | Gridea - Atom Feed" href="https://tjoven.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="本地操作
+Git add .                                添加文件
+Git commit -m “”             commit文件
+Git reset --hard HEAD^      版本回..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tjoven.github.io">
+  <img class="avatar" src="https://tjoven.github.io/images/avatar.png?v=1606667167961" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Git常用命令
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-11-29
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="本地操作">本地操作</h1>
+<h3 id="git-add-添加文件">Git add .                                添加文件</h3>
+<h3 id="git-commit-m-commit文件">Git commit -m “”             commit文件</h3>
+<h3 id="git-reset-hard-head-版本回退">Git reset --hard HEAD^      版本回退</h3>
+<h3 id="git-reset-hard-hash-回退到某个版本">git reset --hard hash            回退到某个版本</h3>
+<h3 id="git-log-版本历史">git log                                  版本历史</h3>
+<h3 id="git-reflog-commit记录">git reflog                              commit记录</h3>
+<h3 id="git-reset-head-file-从暂存区撤回">git reset HEAD file             从暂存区撤回</h3>
+<h3 id="git-checkout-file-放弃工作区的修改">git checkout -- file              放弃工作区的修改</h3>
+<h3 id="小节">小节</h3>
+<p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。</p>
+<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。</p>
+<p>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
+<h1 id="远程仓库">远程仓库</h1>
+<h3 id="创建ssh-kye-ssh-keygen-t-rsa-c-youremailexamplecom">创建SSH Kye ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</h3>
+<h3 id="git-remote-add-origin-gitserver-namepathrepo-namegit-关联远程仓库">git remote add origin git@server-name:path/repo-name.git   关联远程仓库</h3>
+<h3 id="git-remote-远程仓库信息">git remote              远程仓库信息</h3>
+<h3 id="git-push-origin-master-push远程仓库">git push origin master                                   push远程仓库</h3>
+<h3 id="git-pull-origin-master-更新分支">git pull  origin master                       更新分支</h3>
+<h3 id="git-pull-origin-master-rebase-更新分支没有分叉">git pull origin master   --rebase         更新分支，没有分叉</h3>
+<h3 id="git-clone-克隆仓库">git clone                                                  克隆仓库</h3>
+<h1 id="分支管理">分支管理</h1>
+<h3 id="git-checkout-b-dev-创建并切换分支">git checkout -b dev            创建并切换分支</h3>
+<h3 id="git-checkout-b-feature-origindev-创建远程dev的本地分支并切换">git checkout -b feature origin/dev    创建远程dev的本地分支，并切换</h3>
+<h3 id="git-checkout-dev-切换分支">git checkout dev               切换分支</h3>
+<h3 id="git-branch-dev-创建分支">git branch dev             创建分支</h3>
+<h3 id="git-branch-d-dev-删除分支">git branch -d dev          删除分支</h3>
+<h3 id="git-branch-d-dev-强制删除分支">git branch -D dev          强制删除分支</h3>
+<h3 id="git-merge-dev-dev合并到当前分支">git merge dev           dev合并到当前分支</h3>
+<h3 id="git-stash-commit之前的提交缓存起来保证工作区干净">git stash                 commit之前的提交缓存起来，保证工作区干净</h3>
+<h3 id="git-stash-list-缓存列表">git stash list            缓存列表</h3>
+<h3 id="git-stash-apply-stash0-取出缓存但不从列表删除">git stash apply stash@{0}     取出缓存，但不从列表删除</h3>
+<h3 id="git-stash-pop-stash0-取出缓存同时从列表删除">git stash pop stash@{0}      取出缓存，同时从列表删除</h3>
+<h3 id="git-cherry-pick-hash-复制一个commit到当前分支">git cherry-pick hash   复制一个commit到当前分支</h3>
+<p>#标签管理</p>
+<h3 id="git-tag-tag-当前分支最近一次提交之后-打标签">git tag  TAG    当前分支，最近一次提交之后 打标签</h3>
+<h3 id="git-tag-标签列表">git tag          标签列表</h3>
+<h3 id="git-tag-tag-has-每个commit之后-打标签">git tag TAG has  每个commit之后 打标签</h3>
+<h3 id="git-show-tagname-查看标签信息">git show <tagName>  查看标签信息</h3>
+<h3 id="git-push-origin-tagname-推送标签到远程">git push origin <tagName>  推送标签到远程</h3>
+<h4 id="git手册"><a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf">Git手册</a></h4>
+<!-- more -->
+<h4 id="廖雪峰学git"><a href="https://www.liaoxuefeng.com/wiki/896043488029600/900062620154944">廖雪峰学Git</a></h4>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E6%9C%AC%E5%9C%B0%E6%93%8D%E4%BD%9C">本地操作</a><br>
+*
+<ul>
+<li><a href="#git-add-%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6">Git add .                                添加文件</a></li>
+<li><a href="#git-commit-m-commit%E6%96%87%E4%BB%B6">Git commit -m “”             commit文件</a></li>
+<li><a href="#git-reset-hard-head-%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80">Git reset --hard HEAD^      版本回退</a></li>
+<li><a href="#git-reset-hard-hash-%E5%9B%9E%E9%80%80%E5%88%B0%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC">git reset --hard hash            回退到某个版本</a></li>
+<li><a href="#git-log-%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2">git log                                  版本历史</a></li>
+<li><a href="#git-reflog-commit%E8%AE%B0%E5%BD%95">git reflog                              commit记录</a></li>
+<li><a href="#git-reset-head-file-%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E6%92%A4%E5%9B%9E">git reset HEAD file             从暂存区撤回</a></li>
+<li><a href="#git-checkout-file-%E6%94%BE%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9">git checkout -- file              放弃工作区的修改</a></li>
+<li><a href="#%E5%B0%8F%E8%8A%82">小节</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">远程仓库</a><br>
+*
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BAssh-kye-ssh-keygen-t-rsa-c-youremailexamplecom">创建SSH Kye ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</a></li>
+<li><a href="#git-remote-add-origin-gitserver-namepathrepo-namegit-%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">git remote add origin git@server-name:path/repo-name.git   关联远程仓库</a></li>
+<li><a href="#git-remote-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%BF%A1%E6%81%AF">git remote              远程仓库信息</a></li>
+<li><a href="#git-push-origin-master-push%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">git push origin master                                   push远程仓库</a></li>
+<li><a href="#git-pull-origin-master-%E6%9B%B4%E6%96%B0%E5%88%86%E6%94%AF">git pull  origin master                       更新分支</a></li>
+<li><a href="#git-pull-origin-master-rebase-%E6%9B%B4%E6%96%B0%E5%88%86%E6%94%AF%E6%B2%A1%E6%9C%89%E5%88%86%E5%8F%89">git pull origin master   --rebase         更新分支，没有分叉</a></li>
+<li><a href="#git-clone-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93">git clone                                                  克隆仓库</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86">分支管理</a><br>
+*
+<ul>
+<li><a href="#git-checkout-b-dev-%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF">git checkout -b dev            创建并切换分支</a></li>
+<li><a href="#git-checkout-b-feature-origindev-%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8Bdev%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%B9%B6%E5%88%87%E6%8D%A2">git checkout -b feature origin/dev    创建远程dev的本地分支，并切换</a></li>
+<li><a href="#git-checkout-dev-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF">git checkout dev               切换分支</a></li>
+<li><a href="#git-branch-dev-%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF">git branch dev             创建分支</a></li>
+<li><a href="#git-branch-d-dev-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF">git branch -d dev          删除分支</a></li>
+<li><a href="#git-branch-d-dev-%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF">git branch -D dev          强制删除分支</a></li>
+<li><a href="#git-merge-dev-dev%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF">git merge dev           dev合并到当前分支</a></li>
+<li><a href="#git-stash-commit%E4%B9%8B%E5%89%8D%E7%9A%84%E6%8F%90%E4%BA%A4%E7%BC%93%E5%AD%98%E8%B5%B7%E6%9D%A5%E4%BF%9D%E8%AF%81%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%B9%B2%E5%87%80">git stash                 commit之前的提交缓存起来，保证工作区干净</a></li>
+<li><a href="#git-stash-list-%E7%BC%93%E5%AD%98%E5%88%97%E8%A1%A8">git stash list            缓存列表</a></li>
+<li><a href="#git-stash-apply-stash0-%E5%8F%96%E5%87%BA%E7%BC%93%E5%AD%98%E4%BD%86%E4%B8%8D%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%A0%E9%99%A4">git stash apply stash@{0}     取出缓存，但不从列表删除</a></li>
+<li><a href="#git-stash-pop-stash0-%E5%8F%96%E5%87%BA%E7%BC%93%E5%AD%98%E5%90%8C%E6%97%B6%E4%BB%8E%E5%88%97%E8%A1%A8%E5%88%A0%E9%99%A4">git stash pop stash@{0}      取出缓存，同时从列表删除</a></li>
+<li><a href="#git-cherry-pick-hash-%E5%A4%8D%E5%88%B6%E4%B8%80%E4%B8%AAcommit%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF">git cherry-pick hash   复制一个commit到当前分支</a></li>
+<li><a href="#git-tag-tag-%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E4%B9%8B%E5%90%8E-%E6%89%93%E6%A0%87%E7%AD%BE">git tag  TAG    当前分支，最近一次提交之后 打标签</a></li>
+<li><a href="#git-tag-%E6%A0%87%E7%AD%BE%E5%88%97%E8%A1%A8">git tag          标签列表</a></li>
+<li><a href="#git-tag-tag-has-%E6%AF%8F%E4%B8%AAcommit%E4%B9%8B%E5%90%8E-%E6%89%93%E6%A0%87%E7%AD%BE">git tag TAG has  每个commit之后 打标签</a></li>
+<li><a href="#git-show-tagname-%E6%9F%A5%E7%9C%8B%E6%A0%87%E7%AD%BE%E4%BF%A1%E6%81%AF">git show <tagName>  查看标签信息</a></li>
+<li><a href="#git-push-origin-tagname-%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE%E5%88%B0%E8%BF%9C%E7%A8%8B">git push origin <tagName>  推送标签到远程</a>
+<ul>
+<li><a href="#git%E6%89%8B%E5%86%8C">Git手册</a></li>
+<li><a href="#%E5%BB%96%E9%9B%AA%E5%B3%B0%E5%AD%A6git">廖雪峰学Git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tjoven.github.io/post/effective-java-da-gang/">
+              <h3 class="post-title">
+                Effective Java 大纲
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://tjoven.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

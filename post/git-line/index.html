@@ -2,16 +2,22 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gridea</title>
+<title>Git常用命令 | Gridea</title>
 <link rel="shortcut icon" href="https://tjoven.github.io/favicon.ico?v=1606751731593">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://tjoven.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Gridea - Atom Feed" href="https://tjoven.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Git常用命令 | Gridea - Atom Feed" href="https://tjoven.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="温故而知新" />
+    <meta name="description" content="本地操作
+Git add .                                添加文件
+Git commit -m “”             commit文件
+Git reset --hard HEAD^      版本回..." />
+    <meta name="keywords" content="git" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
     <div class="main">
@@ -68,29 +74,28 @@
   </div>
 </div>
 
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://tjoven.github.io/post/git-line/">
-        <h2 class="post-title">Git常用命令</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-11-29
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-          <a href="https://tjoven.github.io/tag/BvUaTeTCx/" class="post-tag">
-            # git
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        <h2 id="本地操作">本地操作</h2>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Git常用命令
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-11-29
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://tjoven.github.io/tag/BvUaTeTCx/" class="post-tag">
+                  # git
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="本地操作">本地操作</h2>
 <p>Git add .                                添加文件<br>
 Git commit -m “”             commit文件<br>
 Git reset --hard HEAD^      版本回退<br>
@@ -131,70 +136,48 @@ git tag TAG has  每个commit之后 打标签<br>
 git show <tagName>  查看标签信息<br>
 git push origin <tagName>  推送标签到远程</p>
 <h5 id="git手册"><a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf">Git手册</a></h5>
+<!-- more -->
+<h6 id="廖雪峰学git"><a href="https://www.liaoxuefeng.com/wiki/896043488029600/900062620154944">廖雪峰学Git</a></h6>
 
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://tjoven.github.io/post/effective-java/">
-        <h2 class="post-title">Effective Java 大纲</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-11-29
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://tjoven.github.io/tag/jsHqepIAS/" class="post-tag">
-            # java
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://tjoven.github.io/post/hello-gridea/">
-        <h2 class="post-title">Hello Gridea</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-12
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="https://tjoven.github.io/tag/AQVZdu7c0/" class="post-tag">
-            # Gridea
-          </a>
-        
-      </div>
-      
-        <a href="https://tjoven.github.io/post/hello-gridea/" class="post-feature-image" style="background-image: url('https://tjoven.github.io/post-images/hello-gridea.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E6%93%8D%E4%BD%9C">本地操作</a><br>
+*
+<ul>
+<li><a href="#%E5%B0%8F%E8%8A%82">小节</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">远程仓库</a></li>
+<li><a href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86">分支管理</a><br>
+*<br>
+*<br>
+* <a href="#git%E6%89%8B%E5%86%8C">Git手册</a><br>
+* <a href="#%E5%BB%96%E9%9B%AA%E5%B3%B0%E5%AD%A6git">廖雪峰学Git</a></li>
+</ul>
+</li>
+</ul>
 
-      </div>
-    </article>
-  
-</div>
+              </div>
+            </div>
+          </article>
+        </div>
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tjoven.github.io/post/effective-java/">
+              <h3 class="post-title">
+                Effective Java 大纲
+              </h3>
+            </a>
+          </div>
+        
 
-    
+        
+
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
   <a class="rss" href="https://tjoven.github.io/atom.xml" target="_blank">
@@ -204,5 +187,46 @@ git push origin <tagName>  推送标签到远程</p>
 
       </div>
     </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>
